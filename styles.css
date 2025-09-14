@@ -1,0 +1,156 @@
+:root {
+  --bg: #f0f0f0;
+  --text: #222;
+  --accent: #0077ff;
+}
+body.dark {
+  --bg: #121212;
+  --text: #f0f0f0;
+  --accent: #ff9800;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.6s, color 0.6s;
+}
+
+/* Animated gradient background */
+header {
+  text-align: center;
+  padding: 2rem;
+  background: linear-gradient(270deg, #ff6ec4, #7873f5, #4ade80);
+  background-size: 600% 600%;
+  animation: gradientShift 12s ease infinite;
+  color: white;
+  border-radius: 0 0 20px 20px;
+}
+@keyframes gradientShift {
+  0% { background-position: 0% 50% }
+  50% { background-position: 100% 50% }
+  100% { background-position: 0% 50% }
+}
+
+/* Buttons */
+.btn-hover {
+  padding: 10px 20px;
+  margin: 10px;
+  border: none;
+  border-radius: 8px;
+  background: var(--accent);
+  color: white;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+.btn-hover:hover {
+  transform: scale(1.1);
+}
+
+/* Boxes */
+.box {
+  width: 80px;
+  height: 80px;
+  margin: 20px auto;
+  background: var(--accent);
+  border-radius: 12px;
+}
+.animate-slide {
+  animation: slideIn 3s infinite alternate;
+}
+@keyframes slideIn {
+  from { transform: translateX(-50px); }
+  to { transform: translateX(50px); }
+}
+.bounce {
+  animation: bounce 1s ease;
+}
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-60px); }
+}
+
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  justify-content: center;
+  align-items: center;
+}
+.modal.show { display: flex; }
+.modal-content {
+  background: var(--bg);
+  padding: 2rem;
+  border-radius: 15px;
+  transform: translateY(-200px);
+  animation: slideDown 0.5s forwards;
+  position: relative;
+}
+@keyframes slideDown {
+  to { transform: translateY(0); }
+}
+.close {
+  position: absolute;
+  top: 15px;
+  right: 25px;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+/* Scroll reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 1s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Custom cursor */
+.cursor {
+  width: 25px;
+  height: 25px;
+  border: 2px solid var(--accent);
+  border-radius: 50%;
+  position: fixed;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 10000;
+  transition: transform 0.1s;
+}
+
+/* Game Area */
+#gameArea {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  margin: 20px auto;
+  border: 3px solid var(--accent);
+  border-radius: 12px;
+  background: rgba(0,0,0,0.05);
+  overflow: hidden;
+}
+#gameBox {
+  width: 40px;
+  height: 40px;
+  background: var(--accent);
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  cursor: pointer;
+  display: none;
+  transition: transform 0.2s;
+}
+#gameBox:hover {
+  transform: scale(1.2);
+}
+.game-controls {
+  text-align: center;
+  margin-top: 10px;
+}

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="An interactive web experience blending CSS3 animations and JavaScript functions, crafted by Kevin Ndede—developer, educator, and architect of EduBridge Kenya.">
+  <title>Interactive Web Experience by Kevin Ndede</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="cursor"></div>
+
+  <header>
+    <h1>🌟 Interactive Web Experience 🌟</h1>
+    <p>Bringing web pages to life with <strong>CSS3</strong> & <strong>JavaScript</strong></p>
+    <button id="themeToggle" class="btn-hover">🌗 Toggle Theme</button>
+  </header>
+
+  <!-- Meet the Creator -->
+  <section aria-labelledby="creatorIntro" class="reveal">
+    <h2 id="creatorIntro">Meet the Creator</h2>
+    <p><strong>Kevin Ndede</strong> is a visionary developer and educator based in Kenya. He’s the architect behind <em>EduBridge Kenya</em> and the CBC School MVP—smart, inclusive platforms designed to empower junior secondary schools with curriculum-aligned tools, analytics, and reproducible learning modules.</p>
+  </section>
+
+  <!-- Part 1: CSS-only animations -->
+  <section aria-labelledby="cssAnimations" class="reveal">
+    <h2 id="cssAnimations">Part 1: CSS Transitions & Animations</h2>
+    <button class="btn-hover" aria-label="Hover to see animation">Hover Me</button>
+    <div class="box animate-slide" aria-hidden="true"></div>
+  </section>
+
+  <!-- Part 2: JavaScript functions -->
+  <section aria-labelledby="jsFunctions" class="reveal">
+    <h2 id="jsFunctions">Part 2: JavaScript Functions</h2>
+    <p id="functionOutput">Click a button to see results...</p>
+    <div class="function-buttons">
+      <button onclick="displayResult(7)">Calculate 7²</button>
+      <button onclick="displayResult(12)">Calculate 12²</button>
+      <button onclick="changeColor('functionOutput', 'purple')">Change Output Color</button>
+    </div>
+  </section>
+
+  <!-- Part 3: Combining CSS & JS -->
+  <section aria-labelledby="combinedEffects" class="reveal">
+    <h2 id="combinedEffects">Part 3: Combining CSS & JS</h2>
+    <button id="animateBtn">Bounce the Box</button>
+    <button id="toggleModalBtn">Open Modal</button>
+    <div id="jsBox" class="box" aria-hidden="true"></div>
+  </section>
+
+  <!-- Part 4: Mini Game -->
+  <section aria-labelledby="miniGame" class="reveal">
+    <h2 id="miniGame">Part 4: Mini Game – Catch the Box 🎮</h2>
+    <p>Click the moving box to score points before time runs out!</p>
+    <div id="gameArea">
+      <div id="gameBox"></div>
+    </div>
+    <div class="game-controls">
+      <button id="startGameBtn">Start Game</button>
+      <p id="scoreDisplay">Score: 0</p>
+      <p id="timerDisplay">Time: 20s</p>
+    </div>
+  </section>
+
+  <!-- Modal -->
+  <div id="modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-content">
+      <span id="closeModal" class="close" role="button" tabindex="0" aria-label="Close Modal">&times;</span>
+      <h3 id="modalTitle">Hello from the Modal!</h3>
+      <p>This modal slides in and out dynamically with JavaScript + CSS animations.</p>
+    </div>
+  </div>
+
+  <footer class="reveal">
+    <p>Created with ❤️ by Kevin Ndede using CSS3 + JavaScript</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
